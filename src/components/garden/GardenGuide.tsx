@@ -28,7 +28,7 @@ export function GardenGuide() {
     setInput("");
     setMsgs((m) => [...m, { from: "you", text }]);
     setTimeout(() => {
-      setMsgs((m) => [...m, { from: "guide", text: REPLIES[m.length % REPLIES.length] }]);
+      setMsgs((m) => [...m, { from: "guide", text: REPLIES[m.length % REPLIES.length]! }]);
     }, 700);
   };
 
