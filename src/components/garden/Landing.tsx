@@ -6,10 +6,12 @@ interface Props {
   loading: boolean;
   error: string | null;
   onPlant: (username: string) => void;
+  onDemo: () => void;
 }
 
-export function Landing({ loading, error, onPlant }: Props) {
+export function Landing({ loading, error, onPlant, onDemo }: Props) {
   const [value, setValue] = useState("");
+
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden sky-bg px-6 py-20 text-center">
@@ -55,7 +57,16 @@ export function Landing({ loading, error, onPlant }: Props) {
           </p>
         )}
 
+        <button
+          type="button"
+          onClick={onDemo}
+          className="mx-auto mt-5 block rounded-full border border-border bg-card/50 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:text-foreground"
+        >
+          Wander the demo garden
+        </button>
+
         {loading && <LoadingSprouts />}
+
       </div>
 
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-44 ground-bg [clip-path:ellipse(130%_100%_at_50%_100%)]" />
