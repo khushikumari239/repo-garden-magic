@@ -50,7 +50,7 @@ function titleFor(kind: GardenKind, name: string) {
   const h = hash(name);
   const a = TITLE_PREFIX[kind]!;
   const b = TITLE_SUFFIX[kind]!;
-  return `${a[h % a.length]} ${b[(h >> 3) % b.length]}`;
+  return `${a[h % a.length]} ${b[(h >>> 3) % b.length]}`;
 }
 
 function cleanReadme(md: string) {
